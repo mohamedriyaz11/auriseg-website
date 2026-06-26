@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 const TEAM = [
-  { id: 1, photo: '/images/About Us/team/Srini - Photo.png',      name: 'Srinivasan M. S.',  role: 'Founder & CEO',                        tag: 'Leadership', linkedin: 'https://www.linkedin.com/in/srinivasan-m-s-5690831a0' },
-  { id: 2, photo: '/images/About Us/team/Saranya - Photo.png',    name: 'Saranya Srinivasan', role: 'Co-Founder',                            tag: 'Leadership', linkedin: 'https://www.linkedin.com/in/saranyaauriseg' },
-  { id: 3, photo: '/images/About Us/team/Mukesh - Photo.png',     name: 'Mukesh Sharma',      role: 'VP Operations',                         tag: 'Operations', linkedin: 'https://www.linkedin.com/in/mukesh2305' },
-  { id: 4, photo: '/images/About Us/team/Sanjay - Photo.png',     name: 'Sanjay G',           role: 'VP Sales',                              tag: 'Sales',      linkedin: 'https://www.linkedin.com/in/sanjaygopinathan' },
-  { id: 5, photo: '/images/About Us/team/Daniel - Photo.png',     name: 'Daniel Rhodes',      role: 'Head of Marketing & Analytics',         tag: 'Marketing',  linkedin: 'https://www.linkedin.com/in/daniel-rhodes-1094a36b' },
-  { id: 6, photo: '/images/About Us/team/jeyarajan - Photo.png',  name: 'Jeyarajan R',        role: 'Sr. Manager – Security Assessment',     tag: 'Security',   linkedin: 'https://www.linkedin.com/in/jeyarajan-gabriel-08546b16' },
-  { id: 7, photo: '/images/About Us/team/Praveen - Photo.png',    name: 'Praveen Kumar',      role: 'Head of Compliance',                    tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
-  { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S',     role: 'Manager – Product Engineering',         tag: 'Engineering',linkedin: 'https://www.linkedin.com/in/rathinavelms' },
+  { id: 1, photo: '/images/About Us/team/Srini - Photo.png', name: 'Srinivasan M. S.', role: 'Founder & CEO', tag: 'Leadership', linkedin: 'https://www.linkedin.com/in/srinivasan-m-s-5690831a0' },
+  { id: 2, photo: '/images/About Us/team/Saranya - Photo.png', name: 'Saranya Srinivasan', role: 'Co-Founder', tag: 'Leadership', linkedin: 'https://www.linkedin.com/in/saranyaauriseg' },
+  { id: 3, photo: '/images/About Us/team/Mukesh - Photo.png', name: 'Mukesh Sharma', role: 'VP Operations', tag: 'Operations', linkedin: 'https://www.linkedin.com/in/mukesh2305' },
+  { id: 4, photo: '/images/About Us/team/Sanjay - Photo.png', name: 'Sanjay G', role: 'VP Sales', tag: 'Sales', linkedin: 'https://www.linkedin.com/in/sanjaygopinathan' },
+  { id: 5, photo: '/images/About Us/team/Daniel - Photo.png', name: 'Daniel Rhodes', role: 'Head of Marketing & Analytics', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/daniel-rhodes-1094a36b' },
+  { id: 6, photo: '/images/About Us/team/jeyarajan - Photo.png', name: 'Jeyarajan R', role: 'Sr. Manager – Security Assessment', tag: 'Security', linkedin: 'https://www.linkedin.com/in/jeyarajan-gabriel-08546b16' },
+  { id: 7, photo: '/images/About Us/team/Praveen - Photo.png', name: 'Praveen Kumar', role: 'Head of Compliance', tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
+  { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
 ];
 
 const LinkedInIcon = () => (

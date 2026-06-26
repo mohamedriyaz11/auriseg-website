@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { X, Send, Trash2 } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 
 const ChatBubbleIcon = () => (
   <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -284,7 +284,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState(() => {
     if (typeof window === 'undefined') return [WELCOME];
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = sessionStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
         if (Array.isArray(parsed) && parsed.length) return parsed;
@@ -300,7 +300,7 @@ export default function ChatWidget() {
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
     } catch { }
   }, [messages]);
 
@@ -333,7 +333,7 @@ export default function ChatWidget() {
     }, 450 + Math.min(reply.length * 4, 800));
   };
 
-  const clearChat = () => setMessages([WELCOME]);
+
 
   return (
     <>
@@ -420,14 +420,7 @@ export default function ChatWidget() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={clearChat}
-              className="text-white/80 hover:text-white p-1 transition-transform hover:rotate-12 hover:scale-110"
-              aria-label="Clear conversation"
-              title="Clear conversation"
-            >
-              <Trash2 size={16} />
-            </button>
+
           </div>
 
           {/* Messages */}
