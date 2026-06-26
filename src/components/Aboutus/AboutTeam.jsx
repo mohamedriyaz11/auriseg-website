@@ -9,6 +9,8 @@ const TEAM = [
   { id: 6, photo: '/images/About Us/team/jeyarajan - Photo.png', name: 'Jeyarajan R', role: 'Sr. Manager – Security Assessment', tag: 'Security', linkedin: 'https://www.linkedin.com/in/jeyarajan-gabriel-08546b16' },
   { id: 7, photo: '/images/About Us/team/Praveen - Photo.png', name: 'Praveen Kumar', role: 'Head of Compliance', tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
   { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
+  { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
+  { id: 8, photo: '/images/About Us/team/Thomson.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
 ];
 
 const LinkedInIcon = () => (
@@ -50,8 +52,10 @@ const TeamCard = ({ member, featured }) => {
       {/* Hover overlay — slides up */}
       <div className={`at-overlay${hovered ? ' at-overlay--visible' : ''}`}>
         <div className="at-overlay-inner">
-          <div className="at-overlay-role">{member.role}</div>
-          <div className="at-overlay-name">{member.name}</div>
+          <div className="at-overlay-text">
+            <div className="at-overlay-role">{member.role}</div>
+            <div className="at-overlay-name">{member.name}</div>
+          </div>
           <div className="at-overlay-divider" />
           <a
             href={member.linkedin}
@@ -188,10 +192,10 @@ const AboutTeam = () => (
         cursor: pointer;
         /* Soft neutral bg — white-bg photos multiply into this seamlessly */
         background: #dbd7e3;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 4.5;
       }
       .at-card--featured {
-        aspect-ratio: 4 / 5.2;
+        aspect-ratio: 4 / 4.7;
       }
 
       /* ─── Tag ─── */
@@ -332,16 +336,52 @@ const AboutTeam = () => (
         .at-header-right { text-align: left; max-width: 100%; }
         .at-count { font-size: 48px; }
         .at-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .at-card, .at-card--featured { aspect-ratio: 4 / 5; }
+        .at-card, .at-card--featured { aspect-ratio: 4 / 4.5; }
 
-        /* On mobile, always show overlay */
-        .at-overlay { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        /* On mobile: images in full colour, always show overlay */
+        .at-photo { filter: none; mix-blend-mode: normal; }
+        .at-photo--zoom { transform: none; filter: none; }
         .at-strip { display: none; }
-        .at-photo { filter: brightness(0.5) saturate(0.6); }
-        .at-photo--zoom { transform: none; }
-        .at-overlay-name { font-size: 13px; }
-        .at-overlay-role { font-size: 9px; }
-        .at-overlay-btn { font-size: 11px; padding: 6px 10px; }
+
+        /* Overlay always visible on mobile */
+        .at-overlay {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+
+        /* Overlay inner: flex row — text left, LinkedIn icon right */
+        .at-overlay-inner {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+          padding: 16px 12px 12px;
+          background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+        }
+
+        /* Text block bottom-left */
+        .at-overlay-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .at-overlay-name { font-size: 12px; margin-bottom: 2px; }
+        .at-overlay-role { font-size: 9px; margin-bottom: 0; }
+        .at-overlay-divider { display: none; }
+
+        /* LinkedIn icon-only button bottom-right */
+        .at-overlay-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 7px;
+          border-radius: 8px;
+          flex-shrink: 0;
+          margin-left: 6px;
+        }
+        .at-overlay-btn span { display: none; }
+        .at-overlay-btn svg:last-child { display: none; }
       }
     `}</style>
 
@@ -359,7 +399,7 @@ const AboutTeam = () => (
           </h2>
         </div>
         <div className="at-header-right">
-          <span className="at-count">08</span>
+          <span className="at-count">10</span>
           <p className="at-desc">
             Seasoned experts driving Auriseg's mission to protect organisations across the globe.
           </p>
