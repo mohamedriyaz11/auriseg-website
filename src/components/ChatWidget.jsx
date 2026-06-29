@@ -459,6 +459,7 @@ export default function ChatWidget() {
                   <button
                     key={q}
                     type="button"
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={() => sendMessage(q)}
                     disabled={typing}
                     style={{ animationDelay: `${idx * 60}ms`, background: '#171717', color: '#FE5538', border: '1px solid rgba(254,85,56,0.4)' }}

@@ -9,8 +9,8 @@ const TEAM = [
   { id: 6, photo: '/images/About Us/team/jeyarajan - Photo.png', name: 'Jeyarajan R', role: 'Sr. Manager – Security Assessment', tag: 'Security', linkedin: 'https://www.linkedin.com/in/jeyarajan-gabriel-08546b16' },
   { id: 7, photo: '/images/About Us/team/Praveen - Photo.png', name: 'Praveen Kumar', role: 'Head of Compliance', tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
   { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
-  { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
-  { id: 8, photo: '/images/About Us/team/Thomson.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
+  { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Shiva Prakash V M', role: 'Manager – Content Marketing', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/shivaprakashvm' },
+  { id: 10, photo: '/images/About Us/team/Thomson.png', name: 'Thomson Yeshwanth J M', role: 'SOC Manager', tag: 'Cybersecurity', linkedin: 'https://www.linkedin.com/in/j-m-thomson-yeshwanth-858164223' },
 ];
 
 const LinkedInIcon = () => (
@@ -25,31 +25,20 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const TeamCard = ({ member, featured }) => {
+const TeamCard = ({ member }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <div
-      className={`at-card${featured ? ' at-card--featured' : ''}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Tag pill */}
+    <div className="at-card" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <span className="at-tag">{member.tag}</span>
-
-      {/* Photo */}
       <img
         src={member.photo}
         alt={member.name}
         className={`at-photo${hovered ? ' at-photo--zoom' : ''}`}
         onError={(e) => { e.target.onerror = null; e.target.style.background = '#1a1a2e'; }}
       />
-
-      {/* Always-visible name strip at bottom */}
       <div className={`at-strip${hovered ? ' at-strip--hidden' : ''}`}>
         <span className="at-strip-name">{member.name}</span>
       </div>
-
-      {/* Hover overlay — slides up */}
       <div className={`at-overlay${hovered ? ' at-overlay--visible' : ''}`}>
         <div className="at-overlay-inner">
           <div className="at-overlay-text">
@@ -57,14 +46,7 @@ const TeamCard = ({ member, featured }) => {
             <div className="at-overlay-name">{member.name}</div>
           </div>
           <div className="at-overlay-divider" />
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="at-overlay-btn"
-            aria-label={`${member.name} on LinkedIn`}
-            onClick={(e) => e.stopPropagation()}
-          >
+          <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="at-overlay-btn" aria-label={`${member.name} on LinkedIn`} onClick={(e) => e.stopPropagation()}>
             <LinkedInIcon />
             <span>LinkedIn</span>
             <ArrowIcon />
@@ -78,7 +60,6 @@ const TeamCard = ({ member, featured }) => {
 const AboutTeam = () => (
   <>
     <style>{`
-      /* ─── Section ─── */
       .at-section {
         width: 100%;
         background: #0A0A0F;
@@ -87,8 +68,6 @@ const AboutTeam = () => (
         position: relative;
         overflow: hidden;
       }
-
-      /* Background ambient glow */
       .at-section::before {
         content: '';
         position: absolute;
@@ -105,8 +84,6 @@ const AboutTeam = () => (
         background: radial-gradient(circle, rgba(255,85,54,0.08) 0%, transparent 70%);
         pointer-events: none;
       }
-
-      /* ─── Header ─── */
       .at-header {
         display: flex;
         align-items: flex-end;
@@ -116,7 +93,6 @@ const AboutTeam = () => (
         position: relative;
         z-index: 1;
       }
-      .at-header-left {}
       .at-eyebrow {
         display: inline-flex;
         align-items: center;
@@ -168,57 +144,37 @@ const AboutTeam = () => (
         line-height: 1.7;
         margin: 0;
       }
-
-      /* ─── Grid ─── */
       .at-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto auto;
-        gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
         position: relative;
         z-index: 1;
       }
-
-      /* Featured cards (first 2) are taller */
-      .at-card--featured {
-        grid-row: span 1;
-      }
-
-      /* ─── Card ─── */
       .at-card {
         position: relative;
         border-radius: 12px;
         overflow: hidden;
         cursor: pointer;
-        /* Soft neutral bg — white-bg photos multiply into this seamlessly */
         background: #dbd7e3;
-        aspect-ratio: 4 / 4.5;
+        aspect-ratio: 3 / 3.6;
       }
-      .at-card--featured {
-        aspect-ratio: 4 / 4.7;
-      }
-
-      /* ─── Tag ─── */
       .at-tag {
         position: absolute;
-        top: 14px;
-        left: 14px;
+        top: 12px;
+        left: 12px;
         z-index: 3;
         font-family: 'Inter', sans-serif;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: white;
         background: rgba(255,85,54,0.92);
-        padding: 4px 10px;
+        padding: 3px 9px;
         border-radius: 999px;
         backdrop-filter: blur(4px);
       }
-
-      /* ─── Photo ─── */
-      /* mix-blend-mode: multiply makes white photo backgrounds
-         disappear into the card's #dbd7e3 background uniformly */
       .at-photo {
         width: 100%;
         height: 100%;
@@ -233,13 +189,11 @@ const AboutTeam = () => (
         transform: scale(1.06);
         filter: brightness(0.95) saturate(0.95) contrast(1.05);
       }
-
-      /* ─── Name strip (always visible at bottom) ─── */
       .at-strip {
         position: absolute;
         bottom: 0; left: 0; right: 0;
         background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-        padding: 32px 16px 16px;
+        padding: 28px 14px 14px;
         z-index: 2;
         transition: opacity 0.3s ease;
       }
@@ -249,20 +203,17 @@ const AboutTeam = () => (
       }
       .at-strip-name {
         font-family: 'Inter', sans-serif;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
         color: rgba(255,255,255,0.9);
         letter-spacing: -0.01em;
       }
-
-      /* ─── Hover overlay ─── */
       .at-overlay {
         position: absolute;
         inset: 0;
         z-index: 4;
         display: flex;
         align-items: flex-end;
-        padding: 0;
         pointer-events: none;
         opacity: 0;
         transform: translateY(12px);
@@ -275,44 +226,44 @@ const AboutTeam = () => (
       }
       .at-overlay-inner {
         width: 100%;
-        padding: 20px 16px 18px;
+        padding: 18px 14px 16px;
         background: linear-gradient(to top, rgba(10,10,15,0.98) 0%, rgba(10,10,15,0.80) 70%, transparent 100%);
       }
       .at-overlay-role {
         font-family: 'Inter', sans-serif;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 600;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #FF5536;
-        margin-bottom: 6px;
+        margin-bottom: 5px;
       }
       .at-overlay-name {
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 700;
         color: #FFFFFF;
         letter-spacing: -0.02em;
         line-height: 1.2;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
       .at-overlay-divider {
         width: 100%;
         height: 1px;
         background: rgba(255,85,54,0.3);
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
       .at-overlay-btn {
         display: inline-flex;
         align-items: center;
-        gap: 7px;
+        gap: 6px;
         font-family: 'Inter', sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         color: white;
         text-decoration: none;
         background: #FF5536;
-        padding: 7px 14px;
+        padding: 6px 12px;
         border-radius: 6px;
         transition: background 0.2s ease, transform 0.2s ease;
       }
@@ -320,62 +271,40 @@ const AboutTeam = () => (
         background: #e04420;
         transform: scale(1.04);
       }
-
-      /* ─── Tablet ─── */
       @media (max-width: 1100px) {
         .at-section { padding: 64px 40px; }
         .at-title { font-size: 42px; }
         .at-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
       }
-
-      /* ─── Mobile ─── */
       @media (max-width: 768px) {
         .at-section { padding: 52px 20px; }
         .at-header { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
         .at-title { font-size: 32px; }
         .at-header-right { text-align: left; max-width: 100%; }
         .at-count { font-size: 48px; }
-        .at-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .at-card, .at-card--featured { aspect-ratio: 4 / 4.5; }
-
-        /* On mobile: images in full colour, always show overlay */
+        .at-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .at-card { aspect-ratio: 3 / 3.6; }
         .at-photo { filter: none; mix-blend-mode: normal; }
         .at-photo--zoom { transform: none; filter: none; }
         .at-strip { display: none; }
-
-        /* Overlay always visible on mobile */
-        .at-overlay {
-          opacity: 1;
-          transform: translateY(0);
-          pointer-events: auto;
-        }
-
-        /* Overlay inner: flex row — text left, LinkedIn icon right */
+        .at-overlay { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .at-overlay-inner {
           display: flex;
           flex-direction: row;
           align-items: flex-end;
           justify-content: space-between;
-          padding: 16px 12px 12px;
+          padding: 14px 10px 10px;
           background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
         }
-
-        /* Text block bottom-left */
-        .at-overlay-text {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .at-overlay-name { font-size: 12px; margin-bottom: 2px; }
-        .at-overlay-role { font-size: 9px; margin-bottom: 0; }
+        .at-overlay-text { display: flex; flex-direction: column; align-items: flex-start; }
+        .at-overlay-name { font-size: 11px; margin-bottom: 2px; }
+        .at-overlay-role { font-size: 8px; margin-bottom: 0; }
         .at-overlay-divider { display: none; }
-
-        /* LinkedIn icon-only button bottom-right */
         .at-overlay-btn {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 7px;
+          padding: 6px;
           border-radius: 8px;
           flex-shrink: 0;
           margin-left: 6px;
@@ -386,7 +315,6 @@ const AboutTeam = () => (
     `}</style>
 
     <section className="at-section">
-      {/* Header */}
       <div className="at-header">
         <div className="at-header-left">
           <div className="at-eyebrow">
@@ -405,11 +333,9 @@ const AboutTeam = () => (
           </p>
         </div>
       </div>
-
-      {/* Team Grid — all 8 visible, no carousel */}
       <div className="at-grid">
-        {TEAM.map((member, i) => (
-          <TeamCard key={member.id} member={member} featured={i < 2} />
+        {TEAM.map((member) => (
+          <TeamCard key={member.id} member={member} />
         ))}
       </div>
     </section>
