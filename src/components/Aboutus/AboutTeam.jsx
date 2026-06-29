@@ -231,7 +231,7 @@ const AboutTeam = () => (
       }
       .at-photo--zoom {
         transform: scale(1.06);
-        filter: brightness(0.5) saturate(0.4) contrast(1);
+        filter: brightness(0.95) saturate(0.95) contrast(1.05);
       }
 
       /* ─── Name strip (always visible at bottom) ─── */
