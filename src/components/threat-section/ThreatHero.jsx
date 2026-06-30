@@ -24,7 +24,7 @@ const ThreatHero = () => {
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
-                            objectPosition: 'center',
+                            objectPosition: 'center 15%',
                             opacity: 1
                         }}
                         onError={(e) => {
