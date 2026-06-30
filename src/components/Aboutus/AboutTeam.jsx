@@ -231,16 +231,17 @@ const AboutTeam = () => (
       }
       .at-overlay-role {
         font-family: 'Inter', sans-serif;
-        font-size: 9px;
+        font-size: 7.5px;
         font-weight: 600;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
         color: white;
         background: rgba(255,85,54,0.92);
-        padding: 4px 10px;
+        padding: 3px 6px;
         border-radius: 999px;
         display: inline-block;
         margin-bottom: 8px;
+        white-space: nowrap;
       }
       .at-overlay-name {
         font-family: 'Inter', sans-serif;
