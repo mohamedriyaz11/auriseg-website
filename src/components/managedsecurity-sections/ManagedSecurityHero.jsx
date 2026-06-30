@@ -6,9 +6,10 @@ const MSPHero = () => {
       {/* Desktop Background Image - Hidden on mobile */}
       <div className="absolute inset-0 w-full h-full z-0 hidden md:block">
         <img
-          src="/images/For MSPs and MSSP/hero-bg-fallback.jpg"
+          src="/images/managed-security/Managed Security.jpg"
           alt="Background"
           className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 15%' }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -134,7 +135,7 @@ const MSPHero = () => {
           {/* 1. IMAGE - Mobile (Full Width) - AT THE TOP */}
           <div className="w-full">
             <img
-              src="/images/For MSPs and MSSP/hero-mobile.jpg"
+              src="/images/managed-security/Managed Security.jpg"
               alt="Auriseg Security Operations"
               className="w-full object-cover"
               style={{
