@@ -8,8 +8,8 @@ const TEAM = [
   { id: 5, photo: '/images/About Us/team/Daniel - Photo.png', name: 'Daniel Rhodes', role: 'Head of Marketing & Analytics', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/daniel-rhodes-1094a36b' },
   { id: 6, photo: '/images/About Us/team/jeyarajan - Photo.png', name: 'Jeyarajan R', role: 'Sr. Manager – Security Assessment', tag: 'Security', linkedin: 'https://www.linkedin.com/in/jeyarajan-gabriel-08546b16' },
   { id: 7, photo: '/images/About Us/team/Praveen - Photo.png', name: 'Praveen Kumar', role: 'Head of Compliance', tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
-  { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
-  { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Shiva Prakash V M', role: 'Manager – Content Marketing', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/shivaprakashvm' },
+  { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'SR. Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
+  { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Shiva Prakash V M', role: 'Specialist – Digital Marketing', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/shivaprakashvm' },
   { id: 10, photo: '/images/About Us/team/Thomson.png', name: 'Thomson Yeshwanth J M', role: 'SOC Manager', tag: 'Cybersecurity', linkedin: 'https://www.linkedin.com/in/j-m-thomson-yeshwanth-858164223' },
 ];
 
@@ -29,7 +29,7 @@ const TeamCard = ({ member }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div className="at-card" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-      <span className="at-tag">{member.tag}</span>
+      {/* <span className="at-tag">{member.tag}</span> */}
       <img
         src={member.photo}
         alt={member.name}
@@ -233,10 +233,14 @@ const AboutTeam = () => (
         font-family: 'Inter', sans-serif;
         font-size: 9px;
         font-weight: 600;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: #FF5536;
-        margin-bottom: 5px;
+        color: white;
+        background: rgba(255,85,54,0.92);
+        padding: 4px 10px;
+        border-radius: 999px;
+        display: inline-block;
+        margin-bottom: 8px;
       }
       .at-overlay-name {
         font-family: 'Inter', sans-serif;
@@ -298,7 +302,7 @@ const AboutTeam = () => (
         }
         .at-overlay-text { display: flex; flex-direction: column; align-items: flex-start; }
         .at-overlay-name { font-size: 11px; margin-bottom: 2px; }
-        .at-overlay-role { font-size: 8px; margin-bottom: 0; }
+        .at-overlay-role { font-size: 8px; margin-bottom: 0; padding: 2px 6px; margin-bottom: 2px; }
         .at-overlay-divider { display: none; }
         .at-overlay-btn {
           display: flex;
