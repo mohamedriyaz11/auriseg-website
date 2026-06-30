@@ -10,7 +10,7 @@ const TEAM = [
   { id: 7, photo: '/images/About Us/team/Praveen - Photo.png', name: 'Praveen Kumar', role: 'Head of Compliance', tag: 'Compliance', linkedin: 'https://www.linkedin.com/in/praveen-p-4296615a' },
   { id: 8, photo: '/images/About Us/team/Rathinavel - Photo.png', name: 'Rathinavel M S', role: 'SR. Manager – Product Engineering', tag: 'Engineering', linkedin: 'https://www.linkedin.com/in/rathinavelms' },
   { id: 9, photo: '/images/About Us/team/Shiva.png', name: 'Shiva Prakash V M', role: 'Specialist – Digital Marketing', tag: 'Marketing', linkedin: 'https://www.linkedin.com/in/shivaprakashvm' },
-  { id: 10, photo: '/images/About Us/team/Thomson.png', name: 'Thomson Yeshwanth J M', role: 'SOC Manager', tag: 'Cybersecurity', linkedin: 'https://www.linkedin.com/in/j-m-thomson-yeshwanth-858164223' },
+  { id: 10, photo: '/images/About Us/team/Thomson.png', name: 'Thomson Yeshwanth J M', role: 'Manager - Security Operations(SOC)', tag: 'Cybersecurity', linkedin: 'https://www.linkedin.com/in/j-m-thomson-yeshwanth-858164223' },
 ];
 
 const LinkedInIcon = () => (
