@@ -17,14 +17,14 @@ const ThreatHero = () => {
                 {/* Desktop Background Image - Full Width */}
                 <div className="absolute inset-0 w-full h-full z-0">
                     <img
-                        src="/images/soc-augmentation/hero-bg.jpg"
+                        src="/images/ot-iot-security/OT_IoT security and automotive security.jpg"
                         alt="SOC Operations Background"
                         className="w-full h-full object-cover object-center"
                         style={{
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
-                            objectPosition: 'center',
+                            objectPosition: 'center 15%',
                             opacity: 1
                         }}
                         onError={(e) => {
@@ -391,7 +391,7 @@ const ThreatHero = () => {
                     }}
                 >
                     <img
-                        src="/images/soc-augmentation/hero-mobile-image.png"
+                        src="/images/ot-iot-security/OT_IoT security and automotive security.jpg"
                         alt="SOC Operations Illustration"
                         style={{
                             width: '100%',
