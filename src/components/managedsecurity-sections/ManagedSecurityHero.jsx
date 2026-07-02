@@ -190,7 +190,7 @@ const MSPHero = () => {
                     textTransform: 'uppercase'
                   }}
                 >
-                  WHITE-LABEL SERVICE
+                  Managed Security
                 </span>
               </div>
             </div>

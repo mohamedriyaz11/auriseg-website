@@ -55,7 +55,7 @@ const MSPHero = () => {
                     color: '#FFFFFF'
                   }}
                 >
-                  Advisory and Enablement
+                  GRC and Compliance
                 </span>
               </div>
             </div>
@@ -189,7 +189,7 @@ const MSPHero = () => {
                     textTransform: 'uppercase'
                   }}
                 >
-                  WHITE-LABEL SERVICE
+                  GRC and Compliance
                 </span>
               </div>
             </div>
